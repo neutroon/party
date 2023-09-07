@@ -45,6 +45,9 @@ header{
 header h1{
  font-size: 3.75rem;
 }
+header .content{
+    transition: ease-in-out .3s margin;
+}
 /* end header */
 
 /* singers section */

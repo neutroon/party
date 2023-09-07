@@ -4,11 +4,31 @@ $(function () {
     let navWidt = 260;
     $(this).css("left", navWidt + 16);
     $("nav").width(260);
+    $('header .content').css({
+        marginLeft: navWidt
+    })
   });
   $("nav #close").click(function () {
     $("#openNav").css("left", 16);
     $("nav").width(0);
+    $('header .content').css({
+        marginLeft: 0
+    })
   });
+
+
+  $('nav ul li').click(function () {
+
+    let secId = $(this).attr('data-secId')
+    let toSection = $(secId).offset().top
+
+    $('html, body').animate({
+        scrollTop: toSection
+    },1000)
+    
+   })
+
+
   // ----------------------------------------------------------------------------------------
 
   // signers section -------------------------------------------------------------------------
