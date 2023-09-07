@@ -37,15 +37,6 @@ $(function () {
   // ----------------------------------------------------------------------------------------
 
   // counter section -------------------------------------------------------------------------
-  let daysInWeek = [
-    "Sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
-  ];
   function timer() {
     let endTime = new Date("10 sep 2023 11:59:00 pm");
     endTime = Date.parse(endTime) / 1000;
