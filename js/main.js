@@ -4,31 +4,29 @@ $(function () {
     let navWidt = 260;
     $(this).css("left", navWidt + 16);
     $("nav").width(260);
-    $('header .content').css({
-        marginLeft: navWidt
-    })
+    $("header .content").css({
+      marginLeft: navWidt,
+    });
   });
   $("nav #close").click(function () {
     $("#openNav").css("left", 16);
     $("nav").width(0);
-    $('header .content').css({
-        marginLeft: 0
-    })
+    $("header .content").css({
+      marginLeft: 0,
+    });
   });
 
+  $("nav ul li").click(function () {
+    let secId = $(this).attr("data-secId");
+    let toSection = $(secId).offset().top;
 
-  $('nav ul li').click(function () {
-
-    let secId = $(this).attr('data-secId')
-    let toSection = $(secId).offset().top
-
-    $('html, body').animate({
-        scrollTop: toSection
-    },1000)
-    
-   })
-
-
+    $("html, body").animate(
+      {
+        scrollTop: toSection,
+      },
+      1000
+    );
+  });
   // ----------------------------------------------------------------------------------------
 
   // signers section -------------------------------------------------------------------------
@@ -39,8 +37,6 @@ $(function () {
   // ----------------------------------------------------------------------------------------
 
   // counter section -------------------------------------------------------------------------
-
-  //   $('#counter div span')
   let daysInWeek = [
     "Sunday",
     "monday",
@@ -84,22 +80,25 @@ $(function () {
   // ----------------------------------------------------------------------------------------
 
   // contact section -------------------------------------------------------------------------
-  $('#contact textarea').on('input', function () { 
-
-
-        let charCount = $('#contact textarea').val().length;
-        if(charCount <= 100 ){
-            $('#contact textarea').next('h5').find('span').html(100 - charCount)
-            document.querySelector('#contact textarea + h5 >span').nextSibling.nodeValue = ' character remaining'
-
-        }else{
-            $('#contact textarea').next('h5').find('span').html('your available character finished')
-            document.querySelector('#contact textarea + h5 >span').nextSibling.nodeValue = ''
-        }
-
-   })
+  $("#contact textarea").on("input", function () {
+    let charCount = $("#contact textarea").val().length;
+    if (charCount <= 100) {
+      $("#contact textarea")
+        .next("h5")
+        .find("span")
+        .html(100 - charCount);
+      document.querySelector(
+        "#contact textarea + h5 >span"
+      ).nextSibling.nodeValue = " character remaining";
+    } else {
+      $("#contact textarea")
+        .next("h5")
+        .find("span")
+        .html("your available character finished");
+      document.querySelector(
+        "#contact textarea + h5 >span"
+      ).nextSibling.nodeValue = "";
+    }
+  });
   // ----------------------------------------------------------------------------------------
-
-
-
 });
